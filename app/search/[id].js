@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import { Stack, useRouter, useSearchParams } from "expo-router";
+import { Stack, useRouter, useLocalSearchParams } from "expo-router";
 import { Text, SafeAreaView } from "react-native";
 import axios from "axios";
 
@@ -15,7 +15,7 @@ import { COLORS, icons, SIZES } from "../../constants";
 import styles from "../../styles/search";
 
 const JobSearch = () => {
-  const params = useSearchParams();
+  const { id } = useLocalSearchParams();
   const router = useRouter();
 
   const [searchResult, setSearchResult] = useState([]);
@@ -37,7 +37,7 @@ const JobSearch = () => {
           "X-RapidAPI-Host": "jsearch.p.rapidapi.com",
         },
         params: {
-          query: params.id,
+          query: id,
           page: page.toString(),
         },
       };
@@ -97,7 +97,7 @@ const JobSearch = () => {
         ListHeaderComponent={() => (
           <>
             <View style={styles.container}>
-              <Text style={styles.searchTitle}>{params.id}</Text>
+              <Text style={styles.searchTitle}>{id}</Text>
               <Text style={styles.noOfSearchedJobs}>Job Opportunities</Text>
             </View>
             <View style={styles.loaderContainer}>

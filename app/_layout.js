@@ -1,11 +1,13 @@
-import { Stack } from "expo-router";
 import { useCallback } from "react";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
+import { Drawer } from "expo-router/drawer";
+import { ScreenHeaderBtn } from "../components";
+import { icons } from "../constants";
 
 SplashScreen.preventAutoHideAsync();
 
-export default function Layout() {
+export default function Layout({ navigation }) {
   const [fontsLoaded] = useFonts({
     DMBold: require("../assets/fonts/DMSans-Bold.ttf"),
     DMRegular: require("../assets/fonts/DMSans-Regular.ttf"),
@@ -21,5 +23,21 @@ export default function Layout() {
 
   if (!fontsLoaded) return null;
 
-  return <Stack onLayout={onLayoutRootView} />;
+  // use Drawer for the main screens
+  return (
+    <Drawer
+      screenOptions={{
+        headerTitle: "",
+        // headerLeft: () => {
+        //   return (
+        //     <ScreenHeaderBtn
+        //       // handlePress={() => navigation.toggleDrawer()}
+        //       iconUrl={icons.menu}
+        //       dimension="60%"
+        //     />
+        //   );
+        // },
+      }}
+    />
+  );
 }

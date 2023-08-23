@@ -8,6 +8,17 @@
       "expo-router"
     ],
     "name": "nokriapp",
-    "slug": "nokriapp"
+    "slug": "nokriapp",
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "b61f0f32-2895-4af9-96cc-6e1939c724e4"
+      }
+    },
+    "android": {
+      "package": "com.harshmetkel24.nokriapp"
+    }
   }
 }

@@ -10,14 +10,14 @@ import {
   Welcome,
 } from "../components";
 
-export default function Home() {
+export default function Home({ navigation }) {
   const router = useRouter();
   const [searchTerm, setSearchTerm] = useState("");
 
   return (
     // SafeAreaView allows to show content without notches and camera cutouts
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
-      <Stack.Screen
+      {/* <Stack.Screen
         options={{
           headerStyle: {
             backgroundColor: COLORS.lightWhite,
@@ -25,7 +25,13 @@ export default function Home() {
           },
           headerShadowVisible: false,
           headerLeft: () => {
-            return <ScreenHeaderBtn iconUrl={icons.menu} dimension="60%" />;
+            return (
+              <ScreenHeaderBtn
+                handlePress={() => navigation.toggleDrawer()}
+                iconUrl={icons.menu}
+                dimension="60%"
+              />
+            );
           },
           headerRight: () => {
             return (
@@ -34,7 +40,7 @@ export default function Home() {
           },
           headerTitle: "",
         }}
-      />
+      /> */}
 
       <ScrollView showsVerticalScrollIndicator={false}>
         <View

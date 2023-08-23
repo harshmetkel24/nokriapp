@@ -8,7 +8,7 @@ import {
   RefreshControl,
 } from "react-native";
 
-import { Stack, useRouter, useGlobalSearchParams } from "expo-router";
+import { Stack, useRouter, useLocalSearchParams } from "expo-router";
 
 import {
   Company,
@@ -25,11 +25,11 @@ import useFetch from "../../hook/useFetch";
 const tabs = ["About", "Qualifications", "Responsibilities"];
 
 export default function JobDetails() {
-  const params = useGlobalSearchParams();
+  const { id } = useLocalSearchParams();
   const router = useRouter();
 
   const { data, loading, error, refetch } = useFetch("job-details", {
-    job_id: params.id,
+    job_id: id,
   });
 
   const [refreshing, setRefreshing] = useState(false);
@@ -78,7 +78,7 @@ export default function JobDetails() {
               <ScreenHeaderBtn
                 iconUrl={icons.left}
                 dimension="60%"
-                onPress={() => {
+                handlePress={() => {
                   router.back();
                 }}
               />

@@ -1,0 +1,4 @@
+- custom drawer design 
+- login and signup
+- alerts for job profiles
+- user profile
