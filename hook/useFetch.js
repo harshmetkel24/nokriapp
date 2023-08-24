@@ -348,8 +348,8 @@ const useFetch = (endPoint, query) => {
 
     try {
       // uncomment this to fetch data from api
-      const response = await axios.request(options);
-      setData(response.data.data);
+      // const response = await axios.request(options);
+      // setData(response.data.data);
       setLoading(false);
     } catch (error) {
       setError(error);
