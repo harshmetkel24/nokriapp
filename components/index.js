@@ -12,6 +12,11 @@ import { default as JobAbout } from "./jobdetails/about/About";
 import { default as JobFooter } from "./jobdetails/footer/Footer";
 import Specifics from "./jobdetails/specifics/Specifics";
 
+// profile screen
+import ProfileHeader from "./profile/profileHeader/profileHeader";
+import ProfileBody from "./profile/profileBody/profileBody";
+import Value from "./profile/value/value";
+
 // common
 import NearbyJobCard from "./common/cards/nearby/NearbyJobCard";
 
@@ -25,5 +30,8 @@ export {
   JobAbout,
   JobFooter,
   Specifics,
-  NearbyJobCard
+  NearbyJobCard,
+  ProfileHeader,
+  ProfileBody,
+  Value,
 };
