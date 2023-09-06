@@ -1,14 +1,16 @@
 import { View, Text } from "react-native";
 import React from "react";
 
+import styles from "./value.style";
+
 const value = ({ keyVal, value }) => {
   return (
-    <View>
-      <Text>
+    <View style={styles.container}>
+      <Text style={styles.text}>
         {keyVal}
-        {"  "}
-        {value}
+        {" : "}
       </Text>
+      <Text style={styles.text}>{value}</Text>
     </View>
   );
 };

@@ -8,7 +8,7 @@ export default function Profile() {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={{ flex: 1, padding: SIZES.medium }}>
+        <View style={{ flex: 1, padding: SIZES.medium, alignItems: 'center' }}>
           <ProfileHeader />
           <ProfileBody />
         </View>

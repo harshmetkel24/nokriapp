@@ -1,4 +1,4 @@
-import { View, FlatList } from "react-native";
+import { View, Text, TouchableOpacity, FlatList } from "react-native";
 import React from "react";
 import styles from "../profileBody/profileBody.style";
 
@@ -24,6 +24,14 @@ const profileBody = () => {
         )}
         keyExtractor={(item) => item.key + item.value}
       />
+
+      <View style={styles.profileFooter}>
+        <TouchableOpacity>
+          <View style={styles.button}>
+            <Text style={styles.buttonText}>Edit Profile</Text>
+          </View>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
